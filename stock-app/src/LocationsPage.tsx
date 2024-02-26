@@ -1,53 +1,39 @@
-import styles from "./LocationsList.module.scss";
+import { useLoaderData } from 'react-router';
+import styles from './LocationsPage.module.scss';
 
 type Location = {
-	name: string;
+  name: string;
 };
 
 type Locations = Location[];
 
-type LocationsPageProps = {
-	locations: Locations;
-};
+export function LocationsPage() {
+  const { locationsListData } = useLocationsListData();
 
-export function LocationsPage({ locations }: LocationsPageProps) {
-	return (
-		<ul className={styles.locationsList}>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-			<li className={styles.locationsItem}>
-				<LocationCard />
-			</li>
-		</ul>
-	);
+  return (
+    <ul className={styles.locationsList}>
+      {locationsListData &&
+        locationsListData.map(location => <LocationCard location={location} />)}
+    </ul>
+  );
 }
 
-export function LocationCard() {
-	return (
-		<div className={styles.locationCard}>
-			<h3 className={styles.locationsCardTitle}>Location Name</h3>
-		</div>
-	);
+type LocationCardProps = {
+  location: Location;
+};
+
+export function LocationCard({ location }: LocationCardProps) {
+  return (
+    <div className={styles.locationCard}>
+      <h3 className={styles.locationsCardTitle}>{location.name}</h3>
+    </div>
+  );
+}
+
+function useLocationsListData() {
+  const locationsListData = useLoaderData() as Locations;
+
+  return {
+    locationsListData,
+  };
 }
