@@ -1,3 +1,4 @@
+import { useLoaderData, useParams } from 'react-router';
 import styles from './LocationsPage.module.scss';
 
 type Location = {
@@ -6,48 +7,46 @@ type Location = {
 
 type Locations = Location[];
 
-type LocationsPageProps = {
-  locations: Locations;
-};
+export function LocationsPage() {
+  const { locationsListData } = useLocationsListData();
 
-export function LocationsPage({ locations }: LocationsPageProps) {
   return (
     <ul className={styles.locationsList}>
       <li className={styles.locationsItem}>
-        <LocationCard />
+        <LocationCard location={locationsListData[0]} />
       </li>
       <li className={styles.locationsItem}>
-        <LocationCard />
+        <LocationCard location={locationsListData[0]} />
       </li>
       <li className={styles.locationsItem}>
-        <LocationCard />
+        <LocationCard location={locationsListData[0]} />
       </li>
       <li className={styles.locationsItem}>
-        <LocationCard />
+        <LocationCard location={locationsListData[0]} />
       </li>
       <li className={styles.locationsItem}>
-        <LocationCard />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard />
+        <LocationCard location={locationsListData[0]} />
       </li>
     </ul>
   );
 }
 
-export function LocationCard() {
+type LocationCardProps = {
+  location: Location;
+};
+
+export function LocationCard({ location }: LocationCardProps) {
   return (
     <div className={styles.locationCard}>
-      <h3 className={styles.locationsCardTitle}>Location Name</h3>
+      <h3 className={styles.locationsCardTitle}>{location.name}</h3>
     </div>
   );
+}
+
+function useLocationsListData() {
+  const locationsListData = useLoaderData() as Locations;
+
+  return {
+    locationsListData,
+  };
 }
