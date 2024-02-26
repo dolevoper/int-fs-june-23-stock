@@ -1,0 +1,39 @@
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.title-container {
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+}
+
+.location-select-container {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.title-location-select-separator {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.location-select {
+	width: 10rem;
+	padding: 0.2rem;
+	font-weight: 800;
+	border-radius: 5px;
+}
