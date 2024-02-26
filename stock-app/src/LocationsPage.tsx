@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from 'react-router';
+import { useLoaderData } from 'react-router';
 import styles from './LocationsPage.module.scss';
 
 type Location = {
@@ -12,21 +12,8 @@ export function LocationsPage() {
 
   return (
     <ul className={styles.locationsList}>
-      <li className={styles.locationsItem}>
-        <LocationCard location={locationsListData[0]} />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard location={locationsListData[0]} />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard location={locationsListData[0]} />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard location={locationsListData[0]} />
-      </li>
-      <li className={styles.locationsItem}>
-        <LocationCard location={locationsListData[0]} />
-      </li>
+      {locationsListData &&
+        locationsListData.map(location => <LocationCard location={location} />)}
     </ul>
   );
 }
