@@ -1,22 +1,23 @@
 import { Link } from "react-router-dom";
+import styles from "./TopMenu.module.scss";
 
-const TopMenu = () => {
+export function TopMenu() {
   return (
-    <menu className="topMenu">
-      <li>
-        <Link to={`/`}>Home</Link>
-      </li>
-      <li>
-        <Link to={`/CreateNewItem`}>Create/edit new item</Link>
-      </li>
-      <li>
-        <Link to={`/ListItems`}>List items</Link>
-      </li>
-      <li>
-        <Link to={`/CreateLocation`}>Create/edit location</Link>
-      </li>
-    </menu>
+    <nav>
+        <menu className={styles.topMenu}>
+          <li>
+            <Link to={`/`}>Home</Link>
+          </li>
+          <li>
+            <Link to={`/item`}>Create item</Link>
+          </li>
+          <li>
+            <Link to={`/items`}>List items</Link>
+          </li>
+          <li>
+            <Link to={`/location`}>Create location</Link>
+          </li>
+        </menu>
+    </nav>
   );
-};
-
-export default TopMenu;
+}

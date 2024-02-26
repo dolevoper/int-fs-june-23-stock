@@ -1,5 +1,5 @@
 import { Outlet } from "react-router";
-import TopMenu from "./TopMenu";
+import { TopMenu } from "./TopMenu";
 
 export function App() {
   return (
