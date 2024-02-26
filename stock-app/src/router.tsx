@@ -1,14 +1,15 @@
-import { createBrowserRouter } from "react-router-dom";
-import { App } from "./App";
+import { createBrowserRouter } from 'react-router-dom';
+import { App } from './App';
+import { LocationsPage } from './LocationsPage';
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     Component: App,
     children: [
       {
         index: true,
-        element: <p>Main Screen Here</p>,
+        element: <LocationsPage locations={[]} />,
       },
     ],
   },
