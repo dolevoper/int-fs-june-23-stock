@@ -6,7 +6,6 @@ export function App() {
     <main>
       <TopMenu />
       <h1>Stock</h1>
-      <p>Hello world</p>
       <Outlet />
     </main>
   );
