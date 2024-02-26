@@ -11,11 +11,11 @@ export function ListItemes() {
         </ul>
         </div>
         <div>
-            <h3>kitchen</h3>
+            <h3>fridge</h3>
         <ul> 
-            <li>pot </li>
-            <li>skillet </li>
-            <li>skillet </li>
+            <li>butter </li>
+            <li>tomato </li>
+            <li>cheese </li>
         </ul>
         </div>
       </main>
