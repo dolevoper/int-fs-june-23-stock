@@ -19,8 +19,6 @@ app.get("/check", (req, res) => {
 const server = createServer(app);
 const PORT = process.env.PORT ?? 3000;
 
-app.listen(PORT, () => console.log(`Listening on localhost:${PORT}`));
-
 async function startServer() {
     if (!process.env.CONN_STRING) {
         throw Error("connection string is missing")
