@@ -2,7 +2,7 @@
 
 ![main screen](image.png)
 
-## models
+## Models
 
 - items
   - id
@@ -14,3 +14,12 @@
   - inventory
     - item ref
     - quantity
+
+## Tasks
+
+- Create/edit new item (Yotam)
+- List items (Shai)
+- Create/edit location (Shalev)
+- List locations (Gilad)
+- Setup router (Lilach + Assaf)
+- Setup mongoose (Yizhak)
