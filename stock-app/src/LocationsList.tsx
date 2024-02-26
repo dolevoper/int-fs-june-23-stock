@@ -6,11 +6,11 @@ type Location = {
 
 type Locations = Location[];
 
-interface LocationsListProps {
+type LocationsPageProps = {
 	locations: Locations;
-}
+};
 
-export function LocationsList({ locations }: LocationsListProps) {
+export function LocationsPage({ locations }: LocationsPageProps) {
 	return (
 		<ul className={styles.locationsList}>
 			<li className={styles.locationsItem}>
